@@ -30,10 +30,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # AGP 9.x release lint needs JDK 21+ (crashes on 17 with NoSuchMethodError).
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '25'
 
       - uses: subosito/flutter-action@v2
         with:
